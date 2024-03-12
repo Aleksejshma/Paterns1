@@ -30,9 +30,9 @@ public class ApplicationTest {
     void shouldBeSuccessufully() {
         Data.UserInfo validUser = Data.Registration.generateUser("ru");
         int day1 = 5;
-        String FistMeeting = Data.GenerateDate(day1);
+        String FistMeeting = Data.generateDate(day1);
         int day2 = 7;
-        String SecondMeeting = Data.GenerateDate(day2);
+        String SecondMeeting = Data.generateDate(day2);
         $("[data-test-id='city'] input").setValue(validUser.getCity());
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id='date'] input").setValue(FistMeeting);

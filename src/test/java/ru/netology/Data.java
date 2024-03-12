@@ -14,21 +14,21 @@ public class Data {
 
     }
 
-    public static String GenerateDate(int addDays) {
+    public static String generateDate(int addDays) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
-    public static String GeneraCity() {
+    public static String generaCity() {
         var cities = new String[]{"Москва", "Киров", "Рязань", "Иваново", "Южно-Сахалинск", "Курган"};
         return cities[new Random().nextInt(cities.length)];
     }
 
-    public static String GenerateName(String locale) {
+    public static String generateName(String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.name().lastName() + " " + faker.name().firstName();
     }
 
-    public static String GeneratePhone(String locale) {
+    public static String generatePhone(String locale) {
         var faker = new Faker(new Locale(locale));
         return faker.phoneNumber().phoneNumber();
     }
@@ -40,7 +40,7 @@ public class Data {
 
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(GeneraCity(), GenerateName(locale), GeneratePhone(locale));
+            return new UserInfo(generaCity(), generateName(locale), generatePhone(locale));
         }
     }
 
